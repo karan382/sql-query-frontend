@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# SQL Query Code Editor
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+This repository contains a SQL Query Code Editor web application built with React. It allows users to:
 
-## Available Scripts
+* Edit and Run SQL queries in a CodeMirror‐based text editor.
 
-In the project directory, you can run:
+* Maintain a Saved Queries list, including inline renaming, deletion, and creation of new queries.
 
-### `npm start`
+* Toggle between light and dark themes with separate header and editor styling.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Toggle between top-down and left-right layout for the editor and results.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Dynamically resize panels (editor vs. results) with min/max constraints.
 
-### `npm test`
+* View query results with optional lazy loading to handle large datasets.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Display toast notifications for feedback (e.g., “Query Copied to Clipboard”).
 
-### `npm run build`
+## Tech Stack & Dependencies
+### Framework
+* React – primary library for building the UI.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Major Libraries
+1. @uiw/react-codemirror: Integrates the CodeMirror 6 editor into React.
+2. react-icons: Provides lightweight icon sets (Play, Copy, Save, Edit, Delete, Theme, Layout, etc.).
+3. react-toastify: Provides toast notifications ("Copied to Clipboard").
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Page Load Time & Measurement
+* Load Time: ~1s on a typical broadband connection for the production build.
+* Measured Using: Chrome DevTools (Performance tab) to measure TTI (Time to Interactive).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Performance Optimizations
+1. **Lazy Loading:** For large query results (thousands of rows), data is rendered in chunks or pages, preventing the DOM from having too many elements at once.
+   
+2. **Memoization & useCallback:** Minimizes unnecessary re‐renders by memoizing heavy computations.
 
-### `npm run eject`
+3. **Lightweight Libraries:** Opted for react-icons and minimal additional dependencies to keep bundle size small.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Getting Started
+1. Clone & Install
+```
+git clone https://github.com/karan382/sql-query-frontend.git
+cd sql-query-frontend
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Run in Development
+```
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Build for Production
+```
+npm run build
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Thank you for checking out this SQL Query Code Editor.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to open issues or create pull requests for improvements!
