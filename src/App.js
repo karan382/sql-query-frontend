@@ -153,7 +153,7 @@ function App() {
             {isDarkMode ? <FiSun /> : <FiMoon />}
           </button>
           <button onClick={toggleOrientation}>
-            {orientation === "vertical" ? <RiLayoutRightLine /> : <RiLayoutBottomLine />}
+            {orientation === "horizontal" ? <RiLayoutRightLine /> : <RiLayoutBottomLine />}
           </button>
         </div>
       </header>
