@@ -22,14 +22,20 @@ function App() {
   // List of saved queries
   const [queriesList, setQueriesList] = useState(initialQueries);
   // Which query is selected? (null => no selected query => blank editor)
-  const [selectedQueryId, setSelectedQueryId] = useState(initialQueries[0]?.id || null);
+  const [selectedQueryId, setSelectedQueryId] = useState(-1);
 
   // Editor text
-  const [queryText, setQueryText] = useState(initialQueries[0]?.queryText || "");
+  const [queryText, setQueryText] = useState("-- your code goes here\n");
   // Show/Hide results
   const [showResults, setShowResults] = useState(false);
   // Result data
-  const [tableData, setTableData] = useState(initialQueries[0]?.data || []);
+  const [tableData, setTableData] = useState(
+    [
+      { id: 1, name: "Virat Kohli", position: 1 },
+      { id: 2, product: "Rohit Sharma", stock: 2 },
+      { id: 3, product: "M S Dhoni", stock: 3 },
+    ]
+  );
 
   // When selectedQueryId changes, load that query (or blank if null)
   useEffect(() => {
