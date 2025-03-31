@@ -80,7 +80,11 @@ function App() {
       id: newId,
       title: `Query ${newId}`,
       queryText,
-      data: [],
+      data: [
+        { id: 1, name: "Virat Kohli", position: 1 },
+        { id: 2, product: "Rohit Sharma", stock: 2 },
+        { id: 3, product: "M S Dhoni", stock: 3 },
+      ],
     };
     setQueriesList((prev) => [...prev, newQuery]);
     setSelectedQueryId(newId);
