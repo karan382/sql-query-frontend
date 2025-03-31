@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import "./SplitView.css";
 
 function SplitView({
@@ -12,6 +12,10 @@ function SplitView({
     const [splitSize, setSplitSize] = useState(initialSize);
     const isHorizontal = orientation === "horizontal";
     const containerRef = useRef(null);
+
+    useEffect(() => {
+        setSplitSize(initialSize);
+    }, [orientation, initialSize]);
 
     const handleMouseDown = (e) => {
         e.preventDefault();
