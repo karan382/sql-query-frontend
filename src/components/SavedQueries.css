@@ -1,0 +1,96 @@
+.saved-queries-section {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    border-right: 2px solid #ccc;
+}
+
+.saved-queries-header {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 2px solid #ccc;
+}
+.saved-queries-header h2 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.saved-queries-list {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow-y: auto;
+}
+
+.saved-queries-item {
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 4px 8px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+}
+.saved-queries-item.selected {
+    background-color: #f0f0f0;
+}
+.dark-mode .saved-queries-item.selected {
+    color: #666;
+}
+
+.query-name-label {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.query-title-truncate {
+    max-width: 20ch;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.action-icons {
+    gap: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+.edit-query-btn,
+.delete-query-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 1rem;
+    padding: 4px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+.edit-query-btn:hover,
+.delete-query-btn:hover {
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+.saved-queries-item input[type="text"] {
+    flex: 1;
+    font-size: 1rem;
+    padding: 4px 4px;
+    border: 1px solid #ccc;
+}
+
+.create-query-btn {
+    margin: 0.5rem;
+    padding: 0.75rem;
+    cursor: pointer;
+    font-size: 1rem;
+    background: #f9f9f9;
+    border: 2px solid #ccc;
+    transition: background 0.2s;
+}
+.create-query-btn:hover {
+    background: rgba(128, 128, 128);
+}
