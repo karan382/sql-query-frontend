@@ -75,7 +75,8 @@ function App() {
 
   // Save current editor text as a new query
   const saveQuery = () => {
-    const newId = Date.now();
+    // const newId = Date.now();
+    const newId = queriesList.length + 1;
     const newQuery = {
       id: newId,
       title: `Query ${newId}`,
