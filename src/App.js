@@ -10,7 +10,7 @@ import QueryEditor from "./components/QueryEditor";
 import ResultsTable from "./components/ResultsTable";
 import SplitView from "./components/SplitView";
 
-import { FiSun, FiMoon, FiLayout } from "react-icons/fi";
+import { FiSun, FiMoon } from "react-icons/fi";
 import { RiLayoutRightLine, RiLayoutBottomLine } from "react-icons/ri";
 
 function App() {
@@ -75,7 +75,6 @@ function App() {
 
   // Save current editor text as a new query
   const saveQuery = () => {
-    // const newId = Date.now();
     const newId = queriesList.length + 1;
     const newQuery = {
       id: newId,
